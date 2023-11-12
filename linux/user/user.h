@@ -5,9 +5,19 @@
 #include <string.h>
 #include <stdlib.h>
 
+typedef struct USER
+{
+    char name[30];
+    int uid;
+    int gid;
+    char rep[100];
+    char shell[100];
+}USER;
+
 char*affect(char*dest,const char*scr);
 void echotab(char**t);
 int str2_len(char**t);
 char**tab_user();
+char** split(char*str);
 
 #endif

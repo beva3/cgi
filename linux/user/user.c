@@ -12,25 +12,54 @@ int str2_len(char**t){
 
 void echotab(char**t){
 	for(int i=0 ; i<str2_len(t) ;i++)
-		printf("%s",t[i]);
+		printf("%s<br>",t[i]);
     /* == [fonction de verification] ==*/
 }
 
 char**tab_user(){
 	FILE*f=NULL;
+    USER u={"root",0,0,"/root/root","shell"};/*user - uid - gid - rep - shell*/
+
+    char**sp=(char**)malloc(5*sizeof(char*));
+    for(int i=0; i<5; i++) sp[i]=(char*)malloc(50*sizeof(char));
+
 	char**tab=(char**)malloc(1000*sizeof(char*));
 	for(int i = 0 ; i < 1000 ;  i++) tab[i]=(char*)malloc(256*sizeof(char));
-	char*tmp=(char*)malloc(256*sizeof(char));
+
+	char line[256];
+    char tmp[256];
 	int i=0;
 
 	f=fopen("/etc/passwd","r");
-	while(fgets(tmp,256,f) !=NULL){
-		affect(tab[i],tmp);
+	while(fgets(line,256,f) !=NULL){
+        sscanf(line,"%[^:]:x:%d:%d:%[^\n]",u.name,&u.gid,&u.gid,tmp);
+        sp=split(tmp);
+        sprintf(tab[i],"{%s}=[%d]={%d}=[%s]={%s}",u.name,u.gid,u.gid,sp[1],sp[2]);
+		//affect(tab[i],line);
 		i++;
 	}
+    tab[i]=NULL;
 
-	tab[i]=NULL;
 	fclose(f);
-	free(tmp);
 	return tab;
+}
+
+char** split(char*str){
+    char**sp=(char**)malloc(5*sizeof(char*));
+    for(int i=0; i<5; i++) sp[i]=(char*)malloc(50*sizeof(char));
+    int i=0;/*pour la string*/
+    int j=0;/*controle dans sp*/
+    int k=0;/*controle le numereau de ligne */
+    while (str[i]!='\0')
+    {
+        if(str[i]!=':'){
+			sp[j][k]=str[i];
+			k++;
+		}
+        else{
+			j++;k=0;
+		}
+		i++;
+    }
+    return sp;
 }
