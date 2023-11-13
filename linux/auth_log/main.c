@@ -2,7 +2,7 @@
 
 int main(){
 
-    tab_auth();
+    echotab(tab_auth());
 
     return 0;
 }

@@ -23,5 +23,7 @@ typedef struct AUTH
 
 char**tab_auth();
 char*no_new_line(char* mot);
+void echotab(char**t);
+int str2_len(char**t);
 
 #endif
