@@ -19,10 +19,21 @@ char**tab_auth(){
                     compt++;
                     //printf("%s",line);
                     sscanf(line,"%[^r]raphael-HP-ProBook-450-G2 %[^:]: pam_unix(%[^:]:session): session %[^ ] for user %[^(]",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
+                    no_new_line(auth.user);
                     printf("[%s]+[%s]+[%s]+[%s]+[%s]\n",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
                 }
             }
 
 	fclose(f);
 	return tab;
+}
+char*no_new_line(char* mot){
+    int i = 0;
+    while (mot[i])
+    {
+        if(mot[i] == '\n') mot[i] = '\0';
+        i++;
+    }
+    
+    return mot;
 }

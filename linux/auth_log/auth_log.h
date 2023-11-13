@@ -22,5 +22,6 @@ typedef struct AUTH
 
 
 char**tab_auth();
+char*no_new_line(char* mot);
 
 #endif
