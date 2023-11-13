@@ -17,8 +17,9 @@ char**tab_auth(){
                 {   
                     strcpy(for_user,line);/*zay misy user ihany no lalaoviko*/
                     compt++;
-                    printf("%s",line);
-                    //sscanf(line,"%[^r]raphael-HP-ProBook-450-G2 %[^:]: pam_unix(%[^:]:session): session %[^ ] for user %[^(]",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
+                    //printf("%s",line);
+                    sscanf(line,"%[^r]raphael-HP-ProBook-450-G2 %[^:]: pam_unix(%[^:]:session): session %[^ ] for user %[^(]",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
+                    printf("[%s]+[%s]+[%s]+[%s]+[%s]\n",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
                 }
             }
 
