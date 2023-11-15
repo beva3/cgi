@@ -11,8 +11,15 @@ int str2_len(char**t){
 }
 
 void echotab(char**t){
-	for(int i=0 ; i<str2_len(t) ;i++)
-		printf("%s<br>",t[i]);
+
+	printf("<table>");
+
+	for(int i=0 ; i<str2_len(t) ;i++){
+		printf("%s",t[i]);
+	}
+
+	printf("</table>");
+
     /* == [fonction de verification] ==*/
 }
 
@@ -34,7 +41,15 @@ char**tab_user(){
 	while(fgets(line,256,f) !=NULL){
         sscanf(line,"%[^:]:x:%d:%d:%[^\n]",u.name,&u.gid,&u.gid,tmp);
         sp=split(tmp);
-        sprintf(tab[i],"{%s}=[%d]={%d}=[%s]={%s}",u.name,u.gid,u.gid,sp[1],sp[2]);
+
+        sprintf(tab[i],"\
+		<tr>\
+			<td class = \"user\">%s</td>\
+			<td class = \"uid\">%d</td>\
+			<td class = \"gid\">%d</td>\
+			<td class = \"repository\">%s</td>\
+			<td class = \"shell\">%s</td>\
+		</tr>",u.name,u.uid,u.gid,sp[1],sp[2]);
 		//affect(tab[i],line);
 		i++;
 	}
@@ -47,9 +62,11 @@ char**tab_user(){
 char** split(char*str){
     char**sp=(char**)malloc(5*sizeof(char*));
     for(int i=0; i<5; i++) sp[i]=(char*)malloc(50*sizeof(char));
+
     int i=0;/*pour la string*/
     int j=0;/*controle dans sp*/
     int k=0;/*controle le numereau de ligne */
+
     while (str[i]!='\0')
     {
         if(str[i]!=':'){
