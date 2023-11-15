@@ -20,4 +20,6 @@ int str2_len(char**t);
 char**tab_user();
 char** split(char*str);
 
+void conf_html();
+
 #endif
