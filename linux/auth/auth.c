@@ -57,11 +57,11 @@ char* tab_data(char line[]){
     ,moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
     sprintf(td,"\
     <tr>\
-        <td>%s</td>\
-        <td>%s</td>\
-        <td>%s</td>\
-        <td>%s</td>\
-        <td>%s</td>\
+        <td class = \"\">%s</td>\
+        <td class = \"srvc_prog\">%s</td>\
+        <td class = \"pam\">%s</td>\
+        <td class = \"session\">%s</td>\
+        <td class = \"user\">%s</td>\
     </tr>",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
     return td;
 }
