@@ -24,6 +24,10 @@ char**tab_auth(){
             sprintf(tab[i],"[%s]+[%s]+[%s]+[%s]+[%s]\n",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
             i++;
         }
+        else {
+            printf("Error");
+            exit(1);
+        }
     }
     tab[i] = NULL;
 
