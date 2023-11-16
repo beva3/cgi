@@ -15,7 +15,7 @@ TAB_L file_to_tab(FILE* f){
     {
         if (strstr(line,"for user") != NULL)
         {
-            strcpy(ftt.tab[i] , line);
+            strcpy(ftt.tab[i] , tab_data(line));
             i++;
         }
     }
@@ -45,4 +45,23 @@ void echo_tab(TAB_L t){
         printf("%s",t.tab[i]);
     }
     
+}
+
+char* tab_data(char line[]){
+    
+    char* td = (char*)malloc(256*sizeof(char));
+    char moment[100];
+    AUTH auth = {{"date","time"},"srvc_prg ","pan","ses","user"};
+
+    sscanf(line,"%[^r]raphael-HP-ProBook-450-G2 %[^:]: pam_unix(%[^:]:session): session %[^ ] for user %[^(]"\
+    ,moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
+    sprintf(td,"\
+    <tr>\
+        <td>%s</td>\
+        <td>%s</td>\
+        <td>%s</td>\
+        <td>%s</td>\
+        <td>%s</td>\
+    </tr>",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
+    return td;
 }
