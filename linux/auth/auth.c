@@ -39,12 +39,15 @@ int n_lfile(char* file){
 }
 
 void echo_tab(TAB_L t){
+
+    printf("<table>");
     
     for (int i = 0; i < t.l; i++)
     {
         printf("%s",t.tab[i]);
     }
     
+    printf("</table>");
 }
 
 char* tab_data(char line[]){
