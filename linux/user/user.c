@@ -70,13 +70,13 @@ char** split(char*str){
     while (str[i]!='\0')
     {
         if(str[i]!=':'){
-			sp[j][k]=str[i];
-			k++;
-		}
+		sp[j][k]=str[i];
+		k++;
+	}
         else{
-			j++;k=0;
-		}
-		i++;
+		j++;k=0;
+	}
+	i++;
     }
     return sp;
 }
