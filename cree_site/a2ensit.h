@@ -5,5 +5,6 @@
 	#include <string.h>
 	#include <stdlib.h>
 	
+	FILE* conf_site(char* f_name,char* conf[]);
 
 #endif

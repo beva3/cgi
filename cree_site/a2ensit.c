@@ -1,5 +1,18 @@
 #include "a2ensit.h"
 
+FILE* conf_site(char* f_name,char* conf[]){
+	FILE* f = fopen(f_name,"w");
+	int i = 0;
+	while (conf[i] != NULL)
+	{
+		fprintf(f,"%s\n",conf[i]);
+		i++;
+	}
+
+	return f;
+	fclose(f);
+}
+
 int main(){
 	char* t[] ={\
 		"VirtualHost *:80>\n",\
@@ -25,6 +38,7 @@ int main(){
 		i++;
 	}
 
+	conf_site("test_client",t);
 
 	return 0;
 }
