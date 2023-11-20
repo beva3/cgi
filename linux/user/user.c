@@ -39,7 +39,7 @@ char**tab_user(){
 
 	f=fopen("/etc/passwd","r");
 	while(fgets(line,256,f) !=NULL){
-        sscanf(line,"%[^:]:x:%d:%d:%[^\n]",u.name,&u.gid,&u.gid,tmp);
+        sscanf(line,"%[^:]:x:%d:%d:%[^\n]",u.name,&u.uid,&u.gid,tmp);
         sp=split(tmp);
 
         sprintf(tab[i],"\
