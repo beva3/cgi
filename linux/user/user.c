@@ -118,7 +118,7 @@ void link(int index){
 				break;
 			}	
 		}
-		
+
 		if (index + 9< str2_len(tab_user()) ){
 			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">></a>",index + 1);
 		}
@@ -142,4 +142,45 @@ void tronc(){
 	echotab(tab_user(),i);
 	link(i);
 	//printf("<h2>%s</h2>",query_string);
+}
+
+/*chercher un mot*/
+char**tab_user_needl(char* needl){
+	FILE*f=NULL;
+    USER u={"root",0,0,"/root/root","shell"};/*user - uid - gid - rep - shell*/
+
+    char**sp=(char**)malloc(5*sizeof(char*));
+    for(int i=0; i<5; i++) sp[i]=(char*)malloc(50*sizeof(char));
+
+	char**tab=(char**)malloc(1000*sizeof(char*));
+	for(int i = 0 ; i < 1000 ;  i++) tab[i]=(char*)malloc(256*sizeof(char));
+
+	char line[256];
+    char tmp[256];
+	char mot_chercher[256];
+	int i=0;
+
+	f=fopen("/etc/passwd","r");
+	while(fgets(line,256,f) !=NULL){
+		if(strstr(line,needl) != NULL){
+			strcpy(mot_chercher,line);
+        	sscanf(mot_chercher,"%[^:]:x:%d:%d:%[^\n]",u.name,&u.uid,&u.gid,tmp);
+		}
+        sp=split(tmp);
+
+        sprintf(tab[i],"\
+		<tr>\
+			<td class = \"user\">%s</td>\
+			<td class = \"uid\">%d</td>\
+			<td class = \"gid\">%d</td>\
+			<td class = \"repository\">%s</td>\
+			<td class = \"shell\">%s</td>\
+		</tr>",u.name,u.uid,u.gid,sp[1],sp[2]);
+		//affect(tab[i],line);
+		i++;
+	}
+    tab[i]=NULL;
+
+	fclose(f);
+	return tab;
 }
