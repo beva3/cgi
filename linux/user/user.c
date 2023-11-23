@@ -13,7 +13,15 @@ int str2_len(char**t){
 void echotab(char**t,int j){
 
 	printf("<table>");
-
+	printf("\
+	<tr>\
+		<th class = \"h-user		\">user</th>\
+		<th class = \"h-uid			\">uid</th>\
+		<th class = \"h-gid			\">gid</th>\
+		<th class = \"h-repository	\">repository</th>\
+		<th class = \"h-shell		\">shell</th>\
+	</tr>\
+	");
 	for(int i=j ; i< j + 5 ;i++){
 		printf("%s",t[i]);
 	}
