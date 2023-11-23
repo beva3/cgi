@@ -97,6 +97,8 @@ void link(){
 }
 
 void tronc(){
+	char* query_string = getenv("QUERY_STRING");
 	echotab(tab_user(),3);
 	link();
+	printf("<h2>%s</h2>",query_string);
 }
