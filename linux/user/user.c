@@ -99,7 +99,12 @@ char** split(char*str){
 void link(int index){
 	for (int i = index; i < index + 5; i++)
 	{
-		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i);
+		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i + 1);
+		if (i+ 7 > str2_len(tab_user()))
+		{
+			break;
+		}
+		
 	}
 	
 }
