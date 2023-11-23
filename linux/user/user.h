@@ -19,7 +19,7 @@ void echotab(char**t,int i);
 int str2_len(char**t);
 char**tab_user();
 char** split(char*str);
-
 void conf_html();
+void tronc();
 
 #endif

@@ -80,3 +80,7 @@ char** split(char*str){
     }
     return sp;
 }
+
+void tronc(){
+	echotab(tab_user(),3);
+}
