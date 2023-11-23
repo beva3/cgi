@@ -12,21 +12,29 @@ int str2_len(char**t){
 
 void echotab(char**t,int j){
 
-	printf("<table>");
-	printf("\
-	<tr>\
-		<th class = \"h-user		\">user</th>\
-		<th class = \"h-uid			\">uid</th>\
-		<th class = \"h-gid			\">gid</th>\
-		<th class = \"h-repository	\">repository</th>\
-		<th class = \"h-shell		\">shell</th>\
-	</tr>\
-	");
-	for(int i=j ; i< j + 5 ;i++){
-		printf("%s",t[i]);
+	if(j >= 0 && j + 5<str2_len(t))
+	{
+		printf("<table>");
+		printf("\
+		<tr>\
+			<th class = \"h-user		\">user</th>\
+			<th class = \"h-uid			\">uid</th>\
+			<th class = \"h-gid			\">gid</th>\
+			<th class = \"h-repository	\">repository</th>\
+			<th class = \"h-shell		\">shell</th>\
+		</tr>\
+		");
+			
+		for(int i=j ; i< j + 5 ;i++){
+			printf("%s",t[i]);
+		}
+		printf("</table>");
 	}
-
-	printf("</table>");
+	else printf("\
+	<tr>\
+		<td><h1>Tsy Misy</h1></td>\
+	</tr>");
+	
 
     /* == [fonction de verification] ==*/
 }
