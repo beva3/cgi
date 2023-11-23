@@ -97,26 +97,42 @@ char** split(char*str){
     return sp;
 }
 void link(int index){
+
+	if (index > 0 ){
+		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\"><</a>",index - 1);
+	}
+	else{
+		printf("<input type=\"button\" value=\"<\" disabled>");
+	}
+
 	for (int i = index; i < index + 5; i++)
 	{
 		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i + 1);
 		if (i+ 7 > str2_len(tab_user()))
 		{
 			break;
-		}
-		
+		}	
+	}
+
+	if (index + 9< str2_len(tab_user()) ){
+		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">></a>",index + 1);
+	}
+	else{
+		printf("<input type=\"button\" value=\">\" disabled>");
 	}
 	
 }
+
 int index_(char* query_string){
 	int index = 0;
 	sscanf(query_string,"index=%d",&index);
 	return index;
 }
+
 void tronc(){
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
 	echotab(tab_user(),i);
 	link(i);
-	printf("<h2>%s</h2>",query_string);
+	//printf("<h2>%s</h2>",query_string);
 }
