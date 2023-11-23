@@ -11,30 +11,32 @@ int str2_len(char**t){
 }
 
 void echotab(char**t,int j){
+	printf("\
+	<div class +\"user-tab\">");
+		if(j >= 0 && j + 5<str2_len(t))
+		{
+			printf("<table>");
+			printf("\
+			<tr>\
+				<th class = \"h-user		\">user</th>\
+				<th class = \"h-uid			\">uid</th>\
+				<th class = \"h-gid			\">gid</th>\
+				<th class = \"h-repository	\">repository</th>\
+				<th class = \"h-shell		\">shell</th>\
+			</tr>\
+			");
 
-	if(j >= 0 && j + 5<str2_len(t))
-	{
-		printf("<table>");
-		printf("\
-		<tr>\
-			<th class = \"h-user		\">user</th>\
-			<th class = \"h-uid			\">uid</th>\
-			<th class = \"h-gid			\">gid</th>\
-			<th class = \"h-repository	\">repository</th>\
-			<th class = \"h-shell		\">shell</th>\
-		</tr>\
-		");
-			
-		for(int i=j ; i< j + 5 ;i++){
-			printf("%s",t[i]);
+			for(int i=j ; i< j + 5 ;i++){
+				printf("%s",t[i]);
+			}
+			printf("</table>");
 		}
-		printf("</table>");
-	}
-	else printf("\
-	<tr>\
-		<td><h1>Tsy Misy</h1></td>\
-	</tr>");
-	
+		else printf("\
+		<tr>\
+			<td><h1>Tsy Misy</h1></td>\
+		</tr>");
+	printf("\
+	</div>");
 
     /* == [fonction de verification] ==*/
 }
@@ -98,28 +100,33 @@ char** split(char*str){
 }
 void link(int index){
 
-	if (index > 0 ){
-		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\"><</a>",index - 1);
-	}
-	else{
-		printf("<input type=\"button\" value=\"<\" disabled>");
-	}
+	printf("\
+	<div class = \"pagination\">");
 
-	for (int i = index; i < index + 5; i++)
-	{
-		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i + 1);
-		if (i+ 7 > str2_len(tab_user()))
+		if (index > 0 ){
+			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\"><</a>",index - 1);
+		}
+		else{
+			printf("<input type=\"button\" value=\"<\" disabled>");
+		}
+
+		for (int i = index; i < index + 5; i++)
 		{
-			break;
-		}	
-	}
-
-	if (index + 9< str2_len(tab_user()) ){
-		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">></a>",index + 1);
-	}
-	else{
-		printf("<input type=\"button\" value=\">\" disabled>");
-	}
+			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i + 1);
+			if (i+ 7 > str2_len(tab_user()))
+			{
+				break;
+			}	
+		}
+		
+		if (index + 9< str2_len(tab_user()) ){
+			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">></a>",index + 1);
+		}
+		else{
+			printf("<input type=\"button\" value=\">\" disabled>");
+		}
+	printf("\
+	</div>");
 	
 }
 
