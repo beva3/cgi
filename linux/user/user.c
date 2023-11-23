@@ -88,7 +88,15 @@ char** split(char*str){
     }
     return sp;
 }
+void link(){
+	for (int i = 1; i < 6; i++)
+	{
+		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i);
+	}
+	
+}
 
 void tronc(){
 	echotab(tab_user(),3);
+	link();
 }

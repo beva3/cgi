@@ -21,5 +21,6 @@ char**tab_user();
 char** split(char*str);
 void conf_html();
 void tronc();
+void link();
 
 #endif
