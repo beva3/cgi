@@ -15,7 +15,7 @@ typedef struct USER
 }USER;
 
 char*affect(char*dest,const char*scr);
-void echotab(char**t);
+void echotab(char**t,int i);
 int str2_len(char**t);
 char**tab_user();
 char** split(char*str);

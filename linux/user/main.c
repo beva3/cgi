@@ -7,7 +7,7 @@ int main(){
     
     conf_html();
 
-    echotab(tab_user());
+    echotab(tab_user(),3);
 
     printf("</html>");
 

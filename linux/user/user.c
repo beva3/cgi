@@ -10,11 +10,11 @@ int str2_len(char**t){
 	return l;
 }
 
-void echotab(char**t){
+void echotab(char**t,int j){
 
 	printf("<table>");
 
-	for(int i=0 ; i<str2_len(t) ;i++){
+	for(int i=j ; i< j + 5 ;i++){
 		printf("%s",t[i]);
 	}
 
