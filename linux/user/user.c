@@ -88,17 +88,22 @@ char** split(char*str){
     }
     return sp;
 }
-void link(){
-	for (int i = 1; i < 6; i++)
+void link(int index){
+	for (int i = index; i < index + 5; i++)
 	{
 		printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i);
 	}
 	
 }
-
+int index_(char* query_string){
+	int index = 0;
+	sscanf(query_string,"index=%d",&index);
+	return index;
+}
 void tronc(){
 	char* query_string = getenv("QUERY_STRING");
-	echotab(tab_user(),3);
-	link();
+	int i = index_(query_string);
+	echotab(tab_user(),i);
+	link(i);
 	printf("<h2>%s</h2>",query_string);
 }

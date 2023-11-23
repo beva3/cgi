@@ -21,6 +21,7 @@ char**tab_user();
 char** split(char*str);
 void conf_html();
 void tronc();
-void link();
+void link(int index);
+int index_(char* query_string);
 
 #endif
