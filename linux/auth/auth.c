@@ -42,6 +42,15 @@ void echo_tab(TAB_L t,int index){
 
     printf("<table>");
     
+    printf("\
+	<tr>\
+		<th class = \"moment	\">MOMENTS</th>\
+		<th class = \"srv-prg	\">Service-Programme</th>\
+		<th class = \"pam		\">Pam</th>\
+		<th class = \"session	\">Session</th>\
+		<th class = \"user  	\">User</th>\
+	</tr>");
+    
     for (int i = index; i < index + 5.l; i++)
     {
         printf("%s",t.tab[i]);
