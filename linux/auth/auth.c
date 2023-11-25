@@ -1,11 +1,12 @@
 #include "auth.h"
 
-TAB_L file_to_tab(FILE* f){
+TAB_L auth_log_tab(){
     TAB_L ftt = {NULL,0};
     int i = 0;
     char line[256];
-    
+    FILE* f = fopen("/var/log/auth.log","r");
     ftt.tab = (char**)malloc(MAX*sizeof(char*));
+
     for (int i = 0; i < MAX; i++)
     {
         ftt.tab[i] = (char*)malloc(256*sizeof(char));
@@ -21,7 +22,7 @@ TAB_L file_to_tab(FILE* f){
     }
     
     ftt.l = i - 1;
-    
+    fclose(f);
 
     return ftt;
 }
@@ -66,6 +67,8 @@ void echo_tab(TAB_L t,int index){
     printf("\
     </div>");
 }
+
+
 
 char* tab_data(char line[]){
     

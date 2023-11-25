@@ -35,8 +35,9 @@ typedef struct AUTH
 }AUTH;
 
 
-TAB_L file_to_tab(FILE* f);
+TAB_L auth_log_tab();
 void echo_tab(TAB_L t,int index);
 char* tab_data(char line[]);
+
 
 #endif
