@@ -89,9 +89,48 @@ char* tab_data(char line[]){
     return td;
 }
 
+int index_(char* query_string){
+	int index = 0;
+	sscanf(query_string,"index=%d",&index);
+	return index;
+}
+
+void link(int index,TAB_L t){
+	printf("\
+	<div class = \"pagination\">");
+
+		if (index > 0 ){
+			printf("<a href = \"http://localhost/cgi-bin/auth_log?index=%d\"><</a>",index - 1);
+		}
+		else{
+			printf("<input type=\"button\" value=\"<\" disabled>");
+		}
+
+		for (int i = index; i < index + 5; i++)
+		{
+			printf("<a href = \"http://localhost/cgi-bin/auth_log?index=%d\">%d</a>",i,i + 1);
+			if (i+ 7 > t.l)
+			{
+				break;
+			}	
+		}
+
+		if (index + 9< t.l ){
+			printf("<a href = \"http://localhost/cgi-bin/auth_log?index=%d\">></a>",index + 1);
+		}
+		else{
+			printf("<input type=\"button\" value=\">\" disabled>");
+		}
+	printf("\
+	</div>");
+	
+}
+
 void tronc(){
+    TAB_L t =auth_log_tab();
 	char* query_string = getenv("QUERY_STRING");
-	int i = 2;
+	int i = index_(query_string);
 	echo_tab(auth_log_tab(),i);
+    link(i,t);
 	//printf("<h2>%s</h2>",query_string);
 }

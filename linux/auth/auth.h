@@ -39,5 +39,7 @@ TAB_L auth_log_tab();
 void echo_tab(TAB_L t,int index);
 char* tab_data(char line[]);
 void tronc();
+int index_(char* query_string);
+void link(int index,TAB_L t);
 
 #endif
