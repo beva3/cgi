@@ -139,6 +139,7 @@ int index_(char* query_string){
 void tronc(){
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
+	recherch();
 	echotab(tab_user(),i);
 	link(i);
 	//printf("<h2>%s</h2>",query_string);
@@ -183,4 +184,13 @@ char**tab_user_needl(char* needl){
 
 	fclose(f);
 	return tab;
+}
+
+void recherch(){
+	printf("\
+	<div class = \"recherch\">");
+		printf("\
+		<a href = \"#\">[chercher]</a>");
+	printf("\
+	</div>");
 }

@@ -24,5 +24,6 @@ void tronc();
 void link(int index);
 int index_(char* query_string);
 char**tab_user_needl(char* needl);
+void recherch();
 
 #endif
