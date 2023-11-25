@@ -39,24 +39,32 @@ int n_lfile(char* file){
 }
 
 void echo_tab(TAB_L t,int index){
-
-    printf("<table>");
-    
     printf("\
-	<tr>\
-		<th class = \"moment	\">MOMENTS</th>\
-		<th class = \"srv-prg	\">Service-Programme</th>\
-		<th class = \"pam		\">Pam</th>\
-		<th class = \"session	\">Session</th>\
-		<th class = \"user  	\">User</th>\
-	</tr>");
-    
-    for (int i = index; i < index + 5.l; i++)
-    {
-        printf("%s",t.tab[i]);
-    }
-    
-    printf("</table>");
+    <div class = \"auth-tab\">");
+        if(index >= 0 && index + 5 < t.l){
+            printf("<table>");
+            printf("\
+	        <tr>\
+	        	<th class = \"moment	\">MOMENTS</th>\
+	        	<th class = \"srv-prg	\">Service-Programme</th>\
+	        	<th class = \"pam		\">Pam</th>\
+	        	<th class = \"session	\">Session</th>\
+	        	<th class = \"user  	\">User</th>\
+	        </tr>");
+
+            for (int i = index; i < index + 5.l; i++)
+            {
+                printf("%s",t.tab[i]);
+            }
+
+            printf("</table>");
+        }
+        else printf("\
+		<tr>\
+			<td><h1>Tsy Misy</h1></td>\
+		</tr>");
+    printf("\
+    </div>");
 }
 
 char* tab_data(char line[]){
