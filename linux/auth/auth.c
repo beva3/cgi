@@ -38,11 +38,11 @@ int n_lfile(char* file){
     return l;
 }
 
-void echo_tab(TAB_L t){
+void echo_tab(TAB_L t,int index){
 
     printf("<table>");
     
-    for (int i = 0; i < t.l; i++)
+    for (int i = index; i < index + 5.l; i++)
     {
         printf("%s",t.tab[i]);
     }

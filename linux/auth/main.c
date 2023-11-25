@@ -6,7 +6,7 @@ int main(){
 
     FILE* f = fopen("/var/log/auth.log","r");
     
-    echo_tab(file_to_tab(f));
+    echo_tab(file_to_tab(f),0);
     
     fclose(f);
 

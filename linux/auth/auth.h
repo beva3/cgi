@@ -13,6 +13,12 @@ typedef struct TAB_L
     int l;
 }TAB_L;
 
+typedef struct DATE{
+        char a[10];
+        char m[10];
+        char j[10];
+}DATE;
+
 typedef struct MOMENT
 {
     char date[50];
@@ -30,7 +36,7 @@ typedef struct AUTH
 
 
 TAB_L file_to_tab(FILE* f);
-void echo_tab(TAB_L t);
+void echo_tab(TAB_L t,int index);
 char* tab_data(char line[]);
 
 #endif
