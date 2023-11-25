@@ -88,3 +88,10 @@ char* tab_data(char line[]){
     </tr>",moment,auth.srvc_prgrm,auth.pam_unix,auth.sesion,auth.user);
     return td;
 }
+
+void tronc(){
+	char* query_string = getenv("QUERY_STRING");
+	int i = 2;
+	echo_tab(auth_log_tab(),i);
+	//printf("<h2>%s</h2>",query_string);
+}

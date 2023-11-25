@@ -3,12 +3,8 @@
 int main(){
 
     printf("Content-Type: text/html\n\n");
-
-    FILE* f = fopen("/var/log/auth.log","r");
-    
-    echo_tab(file_to_tab(f),0);
-    
-    fclose(f);
-
+    printf("<html>");
+    tronc();
+    printf("</html>");
     return 0;
 }

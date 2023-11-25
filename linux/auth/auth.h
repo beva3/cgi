@@ -38,6 +38,6 @@ typedef struct AUTH
 TAB_L auth_log_tab();
 void echo_tab(TAB_L t,int index);
 char* tab_data(char line[]);
-
+void tronc();
 
 #endif
