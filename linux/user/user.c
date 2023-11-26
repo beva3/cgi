@@ -142,6 +142,8 @@ void tronc(){
 	recherch();
 	echotab(tab_user(),i);
 	link(i);
+	echotab(tab_user_needl("root"),2);
+	//printf("<h1>%s</h1>",tab_i(result_recherche("root"),5));
 	//printf("<h2>%s</h2>",query_string);
 }
 
@@ -193,4 +195,25 @@ void recherch(){
 		<a href = \"#\">[chercher]</a>");
 	printf("\
 	</div>");
+}
+/**/
+char* tab_i(char** t, int i){
+	return t[i];
+}
+
+char** result_recherche(char* needel){
+	char**tab=(char**)malloc(1000*sizeof(char*));
+	for(int i = 0 ; i < 1000 ;  i++) tab[i]=(char*)malloc(256*sizeof(char));
+	int i = 0;
+	while (tab_i(tab_user(), i) != NULL)
+	{
+		if (strstr(tab_i(tab_user(), i),needel) != NULL)
+		{
+			affect(tab[i],tab_i(tab_user(), i));
+		}
+		
+		i++;
+	}
+			
+	return tab;
 }

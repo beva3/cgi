@@ -25,5 +25,7 @@ void link(int index);
 int index_(char* query_string);
 char**tab_user_needl(char* needl);
 void recherch();
+char** result_recherche(char* needel);
+char* tab_i(char** t, int i);
 
 #endif
