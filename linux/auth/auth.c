@@ -126,11 +126,44 @@ void link(int index,TAB_L t){
 	
 }
 
+/*
+fonction tab de stockage
+*/
+int len_tab2(TAB_L tab){
+    return tab.l;
+}
+char* tab_i(TAB_L t_l,int i){
+    return t_l.tab[i];
+}
+TAB_L result_auth_log_tab(char* needel){
+    TAB_L tab_line = {NULL, 0};
+    int l = len_tab2(auth_log_tab());
+    tab_line.tab = (char**)malloc(l*sizeof(char*));
+    for (int i = 0; i < l; i++){
+        tab_line.tab[i] = (char*)malloc(255*sizeof(char));
+    }
+    
+    
+    for (int i = 0; i < l; i++)
+    {
+        if (strstr(tab_i(auth_log_tab(),i),needel) != NULL)
+        {
+            strcpy(tab_line.tab[tab_line.l],tab_i(auth_log_tab(),i));
+            tab_line.l++;
+        }
+    }
+       
+    return tab_line;
+    free(tab_line.tab);
+}
+
 void tronc(){
     TAB_L t =auth_log_tab();
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
 	echo_tab(auth_log_tab(),i);
     link(i,t);
+    printf("<h1>%d</h1>",len_tab2(auth_log_tab()));
+    echo_tab(result_auth_log_tab("root"),0);
 	//printf("<h2>%s</h2>",query_string);
 }

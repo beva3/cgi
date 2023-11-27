@@ -14,9 +14,9 @@ typedef struct TAB_L
 }TAB_L;
 
 typedef struct DATE{
-        char a[10];
-        char m[10];
-        char j[10];
+    char a[10];
+    char m[10];
+    char j[10];
 }DATE;
 
 typedef struct MOMENT
@@ -36,10 +36,14 @@ typedef struct AUTH
 
 
 TAB_L auth_log_tab();
+TAB_L result_auth_log_tab(char* needel);
 void echo_tab(TAB_L t,int index);
 char* tab_data(char line[]);
 void tronc();
 int index_(char* query_string);
 void link(int index,TAB_L t);
+int len_tab2(TAB_L tab);
+char* tab_i(TAB_L t_l,int i);
+
 
 #endif
