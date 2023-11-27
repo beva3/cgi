@@ -10,6 +10,7 @@ void conf_html(){
         tableau();
         table();
         pagination();
+        pagination_div();
     printf("</style>");
     printf("</head>");
 }
@@ -62,5 +63,10 @@ void pagination(){
         /*background-color: antiquewhite;*/\
         margin-left: 40px;\
         margin-right: 40px;\
+    }");
+}
+void pagination_div(){
+    printf(".pagination div{\
+        margin: 10px;\
     }");
 }

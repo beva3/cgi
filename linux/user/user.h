@@ -33,4 +33,5 @@ void user_linux();
 void tableau();
 void table();
 void pagination();
+void pagination_div();
 #endif
