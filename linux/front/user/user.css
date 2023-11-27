@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: rgb(2, 21, 7);
+    background-color: rgb(24, 26, 25);
 }
 
 .user-linux{
@@ -12,13 +12,13 @@
 }
 .tableau{
     border: 2px solid rgba(206, 193, 193, 0.5);
-    width: 50%;
+    width: 60%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 30px;
-    box-shadow: 0px 20px 25px -5px green, 0 8px 10px -6px darkkhaki;
+    box-shadow: 0px 20px 20px -5px rgb(0, 117, 128), 0 10px 10px -10px darkkhaki;
 }
 
 table{
@@ -47,11 +47,23 @@ th, td {
 }
 
 .page a{
-    border: 1px solid blue;
+    border: 1px solid transparent;
     text-decoration: none;
-    padding: 12px;
+    padding: 10px;
     border-radius: 10px;
     color: black;
     color: beige;
     box-shadow: 0 1px 3px 0 gold, 0 1px 2px -1px green;
+}
+.page a:hover{
+    
+    color: yellow;
+    box-shadow: 0 2px 5px 1px  white, 1px 7px 9px -1px rgb(17, 246, 17);
+    animation-duration: 1s;
+}
+th{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 1.2em;
+    color: rgb(32, 123, 156);
 }
