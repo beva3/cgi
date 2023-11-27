@@ -8,6 +8,7 @@ void conf_html(){
         tout();
         user_linux();
         tableau();
+        table();
     printf("</style>");
     printf("</head>");
 }
@@ -40,4 +41,14 @@ void tableau(){
         border-radius: 30px;\
         box-shadow: 0px 20px 20px -5px rgb(0, 117, 128), 0 10px 10px -10px darkkhaki;\
     }",37,37,37,37,37);
+}
+void table(){
+    printf("table{\
+        margin: auto;\
+        margin-top: 20px;\
+        margin-bottom: 20px;\
+        font-family: 'Courier New', Courier, monospace;\
+        font-style: italic;\
+        color: rgb(17, 246, 17);\
+    }");
 }

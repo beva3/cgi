@@ -31,4 +31,5 @@ char* tab_i(char** t, int i);
 void tout();
 void user_linux();
 void tableau();
+void table();
 #endif
