@@ -57,6 +57,12 @@ void table(){
         padding: 15px 20px;\
         text-align: center;\
     }");
+    printf("th{\
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\
+        font-style: normal;\
+        font-size: 1.2em;\
+        color: rgb(32, 123, 156);\
+    }");
 }
 void pagination(){
     printf(".pagination{\
