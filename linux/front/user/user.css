@@ -1,21 +1,24 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: burlywood;
+    background-color: rgb(2, 21, 7);
 }
 
 .user-linux{
     text-align: center;
     margin-top: 4vw;
+    color: lightgoldenrodyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .tableau{
-    border: 1px solid teal;
+    border: 2px solid rgba(206, 193, 193, 0.5);
     width: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 30px;
+    box-shadow: 0px 20px 25px -5px green, 0 8px 10px -6px darkkhaki;
 }
 
 table{
@@ -24,7 +27,7 @@ table{
     margin-bottom: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
-    color: forestgreen;
+    color: rgb(17, 246, 17);
 }
 .page{
     display: flex;
@@ -49,4 +52,6 @@ th, td {
     padding: 12px;
     border-radius: 10px;
     color: black;
+    color: beige;
+    box-shadow: 0 1px 3px 0 gold, 0 1px 2px -1px green;
 }
