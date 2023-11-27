@@ -68,6 +68,15 @@ void pagination(){
         margin-left: 40px;\
         margin-right: 40px;\
     }");
+    printf(".pagination a{\
+        border: 1px solid transparent;\
+        text-decoration: none;\
+        padding: 10px;\
+        border-radius: 10px;\
+        color: black;\
+        color: beige;\
+        box-shadow: 0 1px 3px 0 gold, 0 1px 2px -1px green;\
+    }");
 }
 void pagination_div(){
     printf(".pagination div{\
