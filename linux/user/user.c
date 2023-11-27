@@ -22,7 +22,7 @@ void echotab(char**t,int j){
 				<th class = \"h-shell		\">shell</th>\
 			</tr>");
 			for(int i=j ; i< j + 5 ;i++){
-				printf("%s",t[i]);
+				printf("%s",t[i]);//affichage a- la page
 			}
 		printf("</table>");
 	}
