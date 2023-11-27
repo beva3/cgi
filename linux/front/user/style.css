@@ -1,0 +1,13 @@
+.corp-tab{
+    background: linear-gradient(rgb(0,0,0,0.6),rgb(0,0,0,0.6),);
+    width: 30%;
+    height: 20vw;
+    border-radius: 1rem;
+    color: aliceblue;
+}
+body{
+    background-color: rgb(4 47 46);
+    justify-content: center;
+    margin: 0;
+	padding: 0;
+}
