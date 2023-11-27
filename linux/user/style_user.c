@@ -9,6 +9,7 @@ void conf_html(){
         user_linux();
         tableau();
         table();
+        pagination();
     printf("</style>");
     printf("</head>");
 }
@@ -50,5 +51,16 @@ void table(){
         font-family: 'Courier New', Courier, monospace;\
         font-style: italic;\
         color: rgb(17, 246, 17);\
+    }");
+}
+void pagination(){
+    printf(".pagination{\
+        display: flex;\
+        justify-content: center;\
+        margin-top: 20px;\
+        margin-bottom: 20px;\
+        /*background-color: antiquewhite;*/\
+        margin-left: 40px;\
+        margin-right: 40px;\
     }");
 }
