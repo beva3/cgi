@@ -19,29 +19,30 @@ void echotab(char**t,int j){
 	printf("\
 	<div class \"user-tab\">");
 */
-	if(j >= 0 && j + 5<str2_len(t)){
-		printf("<table>");
-			printf("\
-			<tr>\
-				<th class = \"h-user		\">user</th>\
-				<th class = \"h-uid			\">uid</th>\
-				<th class = \"h-gid			\">gid</th>\
-				<th class = \"h-repository	\">repository</th>\
-				<th class = \"h-shell		\">shell</th>\
-			</tr>");
+	printf("<div class=\"tableau\">");
+		if(j >= 0 && j + 5<str2_len(t)){
+			printf("<table>");
+				printf("\
+				<tr>\
+					<th class = \"h-user		\">user</th>\
+					<th class = \"h-uid			\">uid</th>\
+					<th class = \"h-gid			\">gid</th>\
+					<th class = \"h-repository	\">repository</th>\
+					<th class = \"h-shell		\">shell</th>\
+				</tr>");
 
-			for(int i=j ; i< j + 5 ;i++){
-				printf("%s",t[i]);
-			}
-			
-		printf("</table>");
-	}
+				for(int i=j ; i< j + 5 ;i++){
+					printf("%s",t[i]);
+				}
 
-	else printf("\
-	<tr>\
-		<td><h1>Tsy Misy</h1></td>\
-	</tr>");
+			printf("</table>");
+		}
 
+		else printf("\
+		<tr>\
+			<td><h1>Tsy Misy</h1></td>\
+		</tr>");
+	//
 /*	
 	printf("\
 	</div>");
@@ -156,11 +157,11 @@ void tronc(){
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
 	//recherch();
-	echotab(tab_user(),i);
-	link(i);
-	//echotab(tab_user_needl("root"),2);
-	//printf("<h1>%s</h1>",tab_i(result_recherche("root"),5));
-	//printf("<h2>%s</h2>",query_string);
+
+	printf(" ");
+		echotab(tab_user(),i);
+		link(i);
+	printf("<div>");
 }
 
 /*chercher un mot*/
