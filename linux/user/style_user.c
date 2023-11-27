@@ -7,6 +7,7 @@ void conf_html(){
     printf("<style>");
         tout();
         user_linux();
+        tableau();
     printf("</style>");
     printf("</head>");
 }
@@ -25,4 +26,18 @@ void user_linux(){
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\
         color: lightgoldenrodyellow;\
     }");
+}
+
+void tableau(){
+    char _60[] = "60%c";
+    printf(".tableau{\
+        border: 2px solid rgba(206, 193, 193, 0.5);\
+        width: 60%c;\
+        position: absolute;\
+        top: 50%c;\
+        left: 50%c;\
+        transform: translate(-50%c, -50%c);\
+        border-radius: 30px;\
+        box-shadow: 0px 20px 20px -5px rgb(0, 117, 128), 0 10px 10px -10px darkkhaki;\
+    }",37,37,37,37,37);
 }
