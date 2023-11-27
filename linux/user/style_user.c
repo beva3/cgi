@@ -53,6 +53,10 @@ void table(){
         font-style: italic;\
         color: rgb(17, 246, 17);\
     }");
+    printf("th, td {\
+        padding: 15px 20px;\
+        text-align: center;\
+    }");
 }
 void pagination(){
     printf(".pagination{\
