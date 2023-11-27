@@ -29,4 +29,5 @@ char** result_recherche(char* needel);
 char* tab_i(char** t, int i);
 /* ==== [style] ====*/
 void tout();
+void user_linux();
 #endif
