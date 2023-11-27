@@ -7,9 +7,17 @@ int main(){
     printf("Content-type: text/html\n\n");
     printf("<html>");
     conf_html();
+    
+    printf("<body>");
+        printf("\
+	    <div class=\"user-linux\">\
+            <h1>user linux</h1>\
+        </div>");
 
-    tronc();
-
+        printf("<div class=\"tableau\">");
+            tronc();
+        printf("</div>");
+    printf("</body>");
     printf("</html>");
 
     return 0;

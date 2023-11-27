@@ -11,43 +11,25 @@ int str2_len(char**t){
 }
 
 void echotab(char**t,int j){
-	printf("\
-	<div class=\"user-linux\">\
-        <h1>user linux</h1>\
-    </div>");
-/*
-	printf("\
-	<div class \"user-tab\">");
-*/
-	printf("<div class=\"tableau\">");
-		if(j >= 0 && j + 5<str2_len(t)){
-			printf("<table>");
-				printf("\
-				<tr>\
-					<th class = \"h-user		\">user</th>\
-					<th class = \"h-uid			\">uid</th>\
-					<th class = \"h-gid			\">gid</th>\
-					<th class = \"h-repository	\">repository</th>\
-					<th class = \"h-shell		\">shell</th>\
-				</tr>");
-
-				for(int i=j ; i< j + 5 ;i++){
-					printf("%s",t[i]);
-				}
-
-			printf("</table>");
-		}
-
-		else printf("\
-		<tr>\
-			<td><h1>Tsy Misy</h1></td>\
-		</tr>");
-	//
-/*	
-	printf("\
-	</div>");
-	//== [fonction de verification] ==
-*/
+	if(j >= 0 && j + 5<str2_len(t)){
+		printf("<table>");
+			printf("\
+			<tr>\
+				<th class = \"h-user		\">user</th>\
+				<th class = \"h-uid			\">uid</th>\
+				<th class = \"h-gid			\">gid</th>\
+				<th class = \"h-repository	\">repository</th>\
+				<th class = \"h-shell		\">shell</th>\
+			</tr>");
+			for(int i=j ; i< j + 5 ;i++){
+				printf("%s",t[i]);
+			}
+		printf("</table>");
+	}
+	else printf("\
+	<tr>\
+		<td><h1>Tsy Misy</h1></td>\
+	</tr>");
 }
 
 char**tab_user(){
@@ -109,8 +91,7 @@ char** split(char*str){
 }
 void link(int index){
 
-	printf("\
-	<div class = \"pagination\">");
+	printf("<div class = \"pagination\">");
 
 		if (index > 0 )
 			printf("\
@@ -142,8 +123,7 @@ void link(int index){
 			<div>\
 				<input type=\"button\" value=\">\" disabled>\
 			</div>");
-	printf("\
-	</div>");
+	printf("</div>");
 	
 }
 
@@ -157,11 +137,8 @@ void tronc(){
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
 	//recherch();
-
-	printf(" ");
-		echotab(tab_user(),i);
-		link(i);
-	printf("<div>");
+	echotab(tab_user(),i);
+	link(i);
 }
 
 /*chercher un mot*/
