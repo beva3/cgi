@@ -77,6 +77,11 @@ void pagination(){
         color: beige;\
         box-shadow: 0 1px 3px 0 gold, 0 1px 2px -1px green;\
     }");
+    printf(".pagination a:hover{\
+        color: yellow;\
+        box-shadow: 0 2px 5px 1px  white, 1px 7px 9px -1px rgb(17, 246, 17);\
+        animation-duration: 1s;\
+    }");
 }
 void pagination_div(){
     printf(".pagination div{\
