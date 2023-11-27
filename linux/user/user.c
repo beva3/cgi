@@ -11,17 +11,16 @@ int str2_len(char**t){
 }
 
 void echotab(char**t,int j){
-/*
 	printf("\
 	<div class=\"user-linux\">\
         <h1>user linux</h1>\
     </div>");
-
+/*
 	printf("\
 	<div class \"user-tab\">");
 */
-		if(j >= 0 && j + 5<str2_len(t)){
-			printf("<table>");
+	if(j >= 0 && j + 5<str2_len(t)){
+		printf("<table>");
 			printf("\
 			<tr>\
 				<th class = \"h-user		\">user</th>\
@@ -29,23 +28,25 @@ void echotab(char**t,int j){
 				<th class = \"h-gid			\">gid</th>\
 				<th class = \"h-repository	\">repository</th>\
 				<th class = \"h-shell		\">shell</th>\
-			</tr>\
-			");
+			</tr>");
 
 			for(int i=j ; i< j + 5 ;i++){
 				printf("%s",t[i]);
 			}
-			printf("</table>");
-		}
-		else printf("\
-		<tr>\
-			<td><h1>Tsy Misy</h1></td>\
-		</tr>");
-/*
+			
+		printf("</table>");
+	}
+
+	else printf("\
+	<tr>\
+		<td><h1>Tsy Misy</h1></td>\
+	</tr>");
+
+/*	
 	printf("\
 	</div>");
+	//== [fonction de verification] ==
 */
-    /* == [fonction de verification] ==*/
 }
 
 char**tab_user(){
@@ -95,13 +96,13 @@ char** split(char*str){
     while (str[i]!='\0')
     {
         if(str[i]!=':'){
-		sp[j][k]=str[i];
-		k++;
-	}
+			sp[j][k]=str[i];
+			k++;
+		}
         else{
-		j++;k=0;
-	}
-	i++;
+			j++;k=0;
+		}
+		i++;
     }
     return sp;
 }
