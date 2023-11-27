@@ -23,7 +23,7 @@ void conf_html();
 void tronc();
 void link(int index);
 int index_(char* query_string);
-char**tab_user_needl(char* needl);
+char**tab_user_needl(char* needel);
 void recherch();
 char** result_recherche(char* needel);
 char* tab_i(char** t, int i);

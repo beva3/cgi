@@ -11,10 +11,16 @@ int str2_len(char**t){
 }
 
 void echotab(char**t,int j){
+/*
 	printf("\
-	<div class +\"user-tab\">");
-		if(j >= 0 && j + 5<str2_len(t))
-		{
+	<div class=\"user-linux\">\
+        <h1>user linux</h1>\
+    </div>");
+
+	printf("\
+	<div class \"user-tab\">");
+*/
+		if(j >= 0 && j + 5<str2_len(t)){
 			printf("<table>");
 			printf("\
 			<tr>\
@@ -35,9 +41,10 @@ void echotab(char**t,int j){
 		<tr>\
 			<td><h1>Tsy Misy</h1></td>\
 		</tr>");
+/*
 	printf("\
 	</div>");
-
+*/
     /* == [fonction de verification] ==*/
 }
 
@@ -103,28 +110,36 @@ void link(int index){
 	printf("\
 	<div class = \"pagination\">");
 
-		if (index > 0 ){
-			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\"><</a>",index - 1);
-		}
-		else{
-			printf("<input type=\"button\" value=\"<\" disabled>");
-		}
+		if (index > 0 )
+			printf("\
+			<div>\
+				<a href = \"http://localhost/cgi-bin/user_linux?index=%d\"> < </a>\
+			</div>",index - 1);
+		else
+			printf("\
+			<div>\
+				<input type=\"button\" value=\"<\" disabled>\
+			</div>");
 
-		for (int i = index; i < index + 5; i++)
-		{
-			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>",i,i + 1);
+		for (int i = index; i < index + 5; i++){
+			printf("\
+			<div>\
+				<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">%d</a>\
+			</div>",i,i + 1);
 			if (i+ 7 > str2_len(tab_user()))
-			{
-				break;
-			}	
+				break;	
 		}
 
-		if (index + 9< str2_len(tab_user()) ){
-			printf("<a href = \"http://localhost/cgi-bin/user_linux?index=%d\">></a>",index + 1);
-		}
-		else{
-			printf("<input type=\"button\" value=\">\" disabled>");
-		}
+		if (index + 9< str2_len(tab_user()) )
+			printf("\
+			<div>\
+				<a href = \"http://localhost/cgi-bin/user_linux?index=%d\"> > </a>\
+			</div>",index + 1);
+		else
+			printf("\
+			<div>\
+				<input type=\"button\" value=\">\" disabled>\
+			</div>");
 	printf("\
 	</div>");
 	
@@ -139,10 +154,10 @@ int index_(char* query_string){
 void tronc(){
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
-	recherch();
+	//recherch();
 	echotab(tab_user(),i);
 	link(i);
-	echotab(tab_user_needl("root"),2);
+	//echotab(tab_user_needl("root"),2);
 	//printf("<h1>%s</h1>",tab_i(result_recherche("root"),5));
 	//printf("<h2>%s</h2>",query_string);
 }
@@ -205,10 +220,8 @@ char** result_recherche(char* needel){
 	char**tab=(char**)malloc(1000*sizeof(char*));
 	for(int i = 0 ; i < 1000 ;  i++) tab[i]=(char*)malloc(256*sizeof(char));
 	int i = 0;
-	while (tab_i(tab_user(), i) != NULL)
-	{
-		if (strstr(tab_i(tab_user(), i),needel) != NULL)
-		{
+	while (tab_i(tab_user(), i) != NULL){
+		if (strstr(tab_i(tab_user(), i),needel) != NULL){
 			affect(tab[i],tab_i(tab_user(), i));
 		}
 		
