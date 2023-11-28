@@ -55,3 +55,9 @@ th{
     font-size: 1.2em;
     color: rgb(32, 64, 156);
 }
+.pagination a:hover{
+    animation-duration: 60ms;
+    color: yellow;
+    box-shadow: 0 2px 5px 1px  white, 1px 7px 9px -1px rgb(17, 246, 17);
+    animation-duration: 1s;
+}
