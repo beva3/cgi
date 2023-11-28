@@ -49,3 +49,9 @@ th, td {
 .pagination div{
     margin: 10px;
 }
+th{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 1.2em;
+    color: rgb(32, 64, 156);
+}
