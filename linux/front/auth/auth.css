@@ -27,3 +27,8 @@ table{
 table td{
     color: hsl(108, 95%, 50%);
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
