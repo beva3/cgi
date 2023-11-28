@@ -20,3 +20,10 @@
     color: rgb(125, 239, 11);
     margin: 40px;
 }
+table{
+    margin: auto;
+    margin-bottom: 30px;
+}
+table td{
+    color: hsl(108, 95%, 50%);
+}
