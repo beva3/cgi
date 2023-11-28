@@ -10,6 +10,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    
+    transform: translate(-50%,-50%);  
+}
+
+.auth{
+    text-align: center;
+}
+.auth h2{
+    color: rgb(125, 239, 11);
+    margin: 40px;
 }
