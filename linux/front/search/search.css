@@ -1,0 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image:linear-gradient(rgba(29, 111, 194, 0.2),rgba(29, 111, 194, 0.2)) ,url(./img/sele_ring_center_green.jpg);
+    background-size: cover;
+}
