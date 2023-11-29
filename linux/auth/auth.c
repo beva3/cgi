@@ -40,32 +40,28 @@ int n_lfile(char* file){
 }
 
 void echo_tab(TAB_L t,int index){
-    printf("\
-    <div class = \"auth-tab\">");
-        if(index >= 0 && index + 5 < t.l){
-            printf("<table>");
-            printf("\
-	        <tr>\
-	        	<th class = \"moment	\">MOMENTS</th>\
-	        	<th class = \"srv-prg	\">Service-Programme</th>\
-	        	<th class = \"pam		\">Pam</th>\
-	        	<th class = \"session	\">Session</th>\
-	        	<th class = \"user  	\">User</th>\
-	        </tr>");
-
-            for (int i = index; i < index + 5.l; i++)
-            {
-                printf("%s",t.tab[i]);
-            }
-
-            printf("</table>");
+    if(index >= 0 && index + 5 < t.l){
+        printf("<table>");
+        printf("\
+	    <tr>\
+	    	<th class = \"moment	\">MOMENTS</th>\
+	    	<th class = \"srv-prg	\">Service-Programme</th>\
+	    	<th class = \"pam		\">Pam</th>\
+	    	<th class = \"session	\">Session</th>\
+	    	<th class = \"user  	\">User</th>\
+	    </tr>");
+        for (int i = index; i < index + 5.l; i++)
+        {
+            printf("%s",t.tab[i]);
         }
-        else printf("\
-		<tr>\
-			<td><h1>Tsy Misy</h1></td>\
-		</tr>");
-    printf("\
-    </div>");
+        printf("</table>");
+    }
+    else printf("\
+    <table>\
+	    <tr>\
+	    	<td><h1>Tsy Misy</h1></td>\
+	    </tr>\
+    </table>");
 }
 
 
@@ -164,6 +160,6 @@ void tronc(){
 	echo_tab(auth_log_tab(),i);
     link(i,t);
     printf("<h1>%d</h1>",len_tab2(auth_log_tab()));
-    echo_tab(result_auth_log_tab("root"),0);
+    //echo_tab(result_auth_log_tab("root"),0);
 	//printf("<h2>%s</h2>",query_string);
 }
