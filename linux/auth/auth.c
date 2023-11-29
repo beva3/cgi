@@ -41,6 +41,10 @@ int n_lfile(char* file){
 
 void echo_tab(TAB_L t,int index){
     if(index >= 0 && index + 5 < t.l){
+        printf("\
+        <div class=\"auth\">\
+            <h2>journaux linux</h2>\
+        </div>");
         printf("<table>");
         printf("\
 	    <tr>\
@@ -157,8 +161,13 @@ void tronc(){
     TAB_L t =auth_log_tab();
 	char* query_string = getenv("QUERY_STRING");
 	int i = index_(query_string);
-	echo_tab(auth_log_tab(),i);
-    link(i,t);
+
+    printf("<div class = \"container\">");
+	    echo_tab(auth_log_tab(),i);
+        link(i,t);
+    printf("<div>");
+
+
     printf("<h1>%d</h1>",len_tab2(auth_log_tab()));
     //echo_tab(result_auth_log_tab("root"),0);
 	//printf("<h2>%s</h2>",query_string);
