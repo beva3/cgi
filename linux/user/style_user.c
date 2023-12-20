@@ -74,7 +74,7 @@ void pagination(){
         margin-left: 40px;\
         margin-right: 40px;\
     }");
-    printf(".pagination a{\
+    printf(".pagination a , input{\
         border: 1px solid transparent;\
         text-decoration: none;\
         padding: 10px;\
