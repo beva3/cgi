@@ -4,6 +4,7 @@
 	#include <stdio.h>
 	#include <string.h>
 	#include <stdlib.h>
-	char* manisa(int i); 
+	char* manisa(int n);
+	/* char* manohy(char* teny1,char* teny2); */
 
 #endif
